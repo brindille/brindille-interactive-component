@@ -1,0 +1,53 @@
+{
+  "name": "brindille-interactive-component",
+  "version": "0.0.1",
+  "description": "Simple ES6 class to build interactive html components.",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile",
+    "test": "mochify --transform babelify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brindille/brindille-component.git"
+  },
+  "keywords": [
+    "brindille",
+    "component",
+    "view"
+  ],
+  "author": {
+    "name": "Valentin Daguenet",
+    "email": "valentin.daguenet@gmail.com",
+    "url": "https://github.com/vdaguenet"
+  },
+  "contributors": [
+    {
+      "name": "Guillaume Gouessan",
+      "email": "guillaume.gouessan@gmail.com",
+      "url": "https://github.com/superguigui"
+    },
+    {
+      "name": "Laetitia Nanni",
+      "email": "laetitia.nanni@gmail.com",
+      "url": "https://github.com/LaetitiaNanni"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brindille/brindille-component/issues"
+  },
+  "homepage": "https://github.com/brindille/brindille-component#readme",
+  "dependencies": {
+    "brindille-component": "0.0.2",
+    "dom-walk": "^0.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "babelify": "^7.2.0",
+    "chai": "^3.5.0",
+    "mochify": "^2.17.0"
+  }
+}
