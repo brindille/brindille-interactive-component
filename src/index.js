@@ -23,7 +23,7 @@ export default class InteractiveComponent extends Component {
       directionY: 0 // 1: top, -1: bottom
     };
 
-    this.startSwipe = {
+    this.touchStartPos = {
       x: 0,
       y: 0
     };
@@ -54,27 +54,27 @@ export default class InteractiveComponent extends Component {
   /* --------------------------
    * Events to override
    * ------------------------ */
-  onClick() {
+  onClick(e) {
     console.warn('You probably want to override onClick on', Object.getPrototypeOf(this));
   }
 
-  onMouseOver() {
+  onMouseOver(e) {
     console.warn('You probably want to override onMouseOver on', Object.getPrototypeOf(this));
   }
 
-  onMouseOut() {
+  onMouseOut(e) {
     console.warn('You probably want to override onMouseOut on', Object.getPrototypeOf(this));
   }
 
-  onTouchStart() {
+  onTouchStart(e) {
     console.warn('You probably want to override onTouchStart on', Object.getPrototypeOf(this));
   }
 
-  onTouchUp() {
+  onTouchUp(e) {
     console.warn('You probably want to override onTouchUp on', Object.getPrototypeOf(this));
   }
 
-  onTouchMove() {
+  onTouchMove(e) {
     console.warn('You probably want to override onTouchMove on', Object.getPrototypeOf(this));
   }
 
@@ -83,31 +83,31 @@ export default class InteractiveComponent extends Component {
    * ------------------------ */
   handleTouchStart(e) {
     if (e.touches[0]) {
-      this.startSwipe.x = e.touches[0].clientX;
-      this.startSwipe.y = e.touches[0].clientY;
+      this.touchStartPos.x = e.touches[0].clientX;
+      this.touchStartPos.y = e.touches[0].clientY;
     }
 
     this.$el.addEventListener('touchmove', this.handleTouchMove);
     this.$el.addEventListener('touchend', this.handleToucheUp);
 
-    this.onTouchStart();
+    this.onTouchStart(e);
   }
 
   handleTouchMove(e) {
     if (e.touches[0]) {
-      this.swipe.distanceX = Math.abs(e.touches[0].clientX - this.startSwipe.x);
-      this.swipe.distanceY = Math.abs(e.touches[0].clientY - this.startSwipe.y);
-      this.swipe.directionX = (this.startSwipe.x < e.touches[0].clientX) ? 1 : -1;
-      this.swipe.directionY = (this.startSwipe.y < e.touches[0].clientY) ? -1 : 1;
+      this.swipe.distanceX = Math.abs(e.touches[0].clientX - this.touchStartPos.x);
+      this.swipe.distanceY = Math.abs(e.touches[0].clientY - this.touchStartPos.y);
+      this.swipe.directionX = (this.touchStartPos.x < e.touches[0].clientX) ? 1 : -1;
+      this.swipe.directionY = (this.touchStartPos.y < e.touches[0].clientY) ? -1 : 1;
     }
 
-    this.onTouchMove();
+    this.onTouchMove(e);
   }
 
-  handleToucheUp() {
+  handleToucheUp(e) {
     this.$el.removeEventListener('touchmove', this.handleTouchMove);
     this.$el.removeEventListener('touchend', this.handleToucheUp);
 
-    this.onTouchUp();
+    this.onTouchUp(e);
   }
 }
