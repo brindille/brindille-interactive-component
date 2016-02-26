@@ -6,12 +6,10 @@ export default class InteractiveComponent extends Component {
     super($el);
     bindAll(this, 'onMouseOver', 'onMouseOut', 'handleTouchStart', 'handleTouchMove', 'handleToucheUp', 'onClick');
 
-    this.deltaBeforeSwipe = 50;
-
-    this.swipe {
+    this.swipe = {
       distanceX: 0, // distance swiped on X
       distanceY: 0, // distance swiped on Y
-      directionX: 0 // 1: right, -1: left
+      directionX: 0, // 1: right, -1: left
       directionY: 0 // 1: top, -1: bottom
     };
 
@@ -85,8 +83,8 @@ export default class InteractiveComponent extends Component {
   handleTouchMove(e) {
     this.swipe.distanceX = Math.abs(e.touches[0].clientX - this.startSwipe.x);
     this.swipe.distanceY = Math.abs(e.touches[0].clientY - this.startSwipe.y);
-    this.swipe.directionX = (this.startSwipe.x < e.touches[0].clientX) 1 : -1;
-    this.swipe.directionY = (this.startSwipe.y < e.touches[0].clientY) -1 : 1;
+    this.swipe.directionX = (this.startSwipe.x < e.touches[0].clientX) ? 1 : -1;
+    this.swipe.directionY = (this.startSwipe.y < e.touches[0].clientY) ? -1 : 1;
 
     this.onTouchMove();
   }
@@ -99,8 +97,8 @@ export default class InteractiveComponent extends Component {
     this.endSwipe.y = e.touches[0].clientY;
     this.swipe.distanceX = Math.abs(this.endSwipe.x - this.startSwipe.x);
     this.swipe.distanceY = Math.abs(this.endSwipe.y - this.startSwipe.y);
-    this.swipe.directionX = (this.startSwipe.x < this.endSwipe.x) 1 : -1;
-    this.swipe.directionY = (this.startSwipe.y < this.endSwipe.y) -1 : 1;
+    this.swipe.directionX = (this.startSwipe.x < this.endSwipe.x) ? 1 : -1;
+    this.swipe.directionY = (this.startSwipe.y < this.endSwipe.y) ? -1 : 1;
 
     this.onToucheUp();
   }

@@ -41,7 +41,7 @@
   "homepage": "https://github.com/brindille/brindille-component#readme",
   "dependencies": {
     "brindille-component": "0.0.2",
-    "dom-walk": "^0.1.1"
+    "lodash.bindall": "^4.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
