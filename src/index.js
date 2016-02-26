@@ -82,8 +82,10 @@ export default class InteractiveComponent extends Component {
    * Handlers for calculations
    * ------------------------ */
   handleTouchStart(e) {
-    this.startSwipe.x = e.touches[0].clientX;
-    this.startSwipe.y = e.touches[0].clientY;
+    if (e.touches[0]) {
+      this.startSwipe.x = e.touches[0].clientX;
+      this.startSwipe.y = e.touches[0].clientY;
+    }
 
     this.$el.addEventListener('touchmove', this.handleTouchMove);
     this.$el.addEventListener('touchend', this.handleToucheUp);
@@ -92,10 +94,12 @@ export default class InteractiveComponent extends Component {
   }
 
   handleTouchMove(e) {
-    this.swipe.distanceX = Math.abs(e.touches[0].clientX - this.startSwipe.x);
-    this.swipe.distanceY = Math.abs(e.touches[0].clientY - this.startSwipe.y);
-    this.swipe.directionX = (this.startSwipe.x < e.touches[0].clientX) ? 1 : -1;
-    this.swipe.directionY = (this.startSwipe.y < e.touches[0].clientY) ? -1 : 1;
+    if (e.touches[0]) {
+      this.swipe.distanceX = Math.abs(e.touches[0].clientX - this.startSwipe.x);
+      this.swipe.distanceY = Math.abs(e.touches[0].clientY - this.startSwipe.y);
+      this.swipe.directionX = (this.startSwipe.x < e.touches[0].clientX) ? 1 : -1;
+      this.swipe.directionY = (this.startSwipe.y < e.touches[0].clientY) ? -1 : 1;
+    }
 
     this.onTouchMove();
   }
