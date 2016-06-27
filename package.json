@@ -1,6 +1,6 @@
 {
   "name": "brindille-interactive-component",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Simple ES6 class to build interactive html components.",
   "main": "lib/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brindille/brindille-component.git"
+    "url": "git+https://github.com/brindille/brindille-interactive-component.git"
   },
   "keywords": [
     "brindille",
@@ -37,9 +37,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brindille/brindille-component/issues"
+    "url": "https://github.com/brindille/brindille-interactive-component/issues"
   },
-  "homepage": "https://github.com/brindille/brindille-component#readme",
+  "homepage": "https://github.com/brindille/brindille-interactive-component#readme",
   "dependencies": {
     "brindille-component": "0.0.2",
     "lodash.bindall": "^4.1.0"
