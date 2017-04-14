@@ -150,6 +150,18 @@ test('changing isMobile dynamically should update listeners', t => {
   t.true(component.clickOK)
 })
 
+test('inherits window.isMobile', t => {
+  window.isMobile = true
+  const component = createComponentContext()
+  t.true(component.isMobile)
+})
+
+test('handles empty touches event', t => {
+  const component = createComponentContext()
+  component.handleTouchStart({touches: []})
+  component.handleTouchMove({touches: []})
+  t.pass()
+})
 
 test('destoying', t => {
   const component = createComponentContext(templates.empty)
