@@ -1,9 +1,5 @@
-import TestComponent from './components/TestComponent';
-import Component from 'brindille-component';
+import TestComponent from './components/TestComponent'
+import Component from 'brindille-component'
 
-const definitions = {
-  TestComponent
-};
-var rootComponent = new Component(document.body, definitions);
-
-console.log('hello');
+const rootComponent = new Component(document.body, {TestComponent})
+rootComponent.mobile = false

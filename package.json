@@ -1,13 +1,21 @@
 {
   "name": "brindille-interactive-component",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Simple ES6 class to build interactive html components.",
   "main": "lib/index.js",
   "scripts": {
     "dev": "budo demo/index.js:bundle.js --dir ./demo --live --open -- -t babelify",
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
-    "test": "mochify --transform babelify"
+    "test": "NODE_PATH=src ava",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "ava": {
+    "require": [
+      "babel-register",
+      "./test/helpers/setup-browser-env.js"
+    ]
   },
   "repository": {
     "type": "git",
@@ -41,19 +49,29 @@
   },
   "homepage": "https://github.com/brindille/brindille-interactive-component#readme",
   "dependencies": {
-    "brindille-component": "0.0.2",
+    "brindille-component": "*",
     "lodash.bindall": "^4.1.0"
   },
+  "standard": {
+    "ignore": [
+      "lib/"
+    ]
+  },
   "devDependencies": {
-    "babel-cli": "^6.5.1",
+    "ava": "^0.19.1",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
     "babel-plugin-transform-es2015-block-scoping": "^6.7.1",
     "babel-plugin-transform-es2015-classes": "^6.7.7",
     "babel-plugin-transform-es2015-object-super": "^6.6.5",
     "babel-plugin-transform-proto-to-assign": "^6.6.5",
     "babel-preset-es2015": "^6.5.0",
     "babelify": "^7.2.0",
+    "browser-env": "^2.0.30",
     "budo": "^8.0.4",
     "chai": "^3.5.0",
-    "mochify": "^2.17.0"
+    "mochify": "^2.17.0",
+    "nyc": "^10.2.0",
+    "sinon": "^2.1.0"
   }
 }
