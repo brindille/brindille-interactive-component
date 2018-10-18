@@ -1,4 +1,4 @@
-import InteractiveComponent from 'index'
+import InteractiveComponent from '../../../src'
 
 export default class TestComponent extends InteractiveComponent {
   constructor ($el) {
