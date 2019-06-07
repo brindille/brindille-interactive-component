@@ -1,9 +1,9 @@
 import test from 'ava'
 import sinon from 'sinon'
 import Component from 'brindille-component'
-import templates from './fixtures/templates'
-import definitions from './fixtures/definitions'
-import {dispatchMouseEvent} from './helpers/trigger-event'
+import templates from './fixtures/_templates'
+import definitions from './fixtures/_definitions'
+import {dispatchMouseEvent} from './helpers/_trigger-event'
 
 /* -------------------------------------------------------------------------------------
   UTILS

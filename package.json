@@ -11,7 +11,7 @@
   "ava": {
     "require": [
       "@babel/register",
-      "./test/helpers/setup-browser-env.js"
+      "./test/helpers/_setup-browser-env.js"
     ]
   },
   "babel": {
@@ -75,10 +75,10 @@
     "@babel/core": "^7.0.0-beta.47",
     "@babel/preset-env": "^7.0.0-beta.47",
     "@babel/register": "^7.0.0-beta.47",
-    "ava": "1.0.0-beta.4",
+    "ava": "^2.0.0",
     "babel-plugin-istanbul": "^5.1.0",
     "browser-env": "^3.2.5",
-    "nyc": "^11.8.0",
+    "nyc": "^14.1.1",
     "sinon": "^6.0.0"
   }
 }
