@@ -71,15 +71,15 @@
     "brindille-component": "*"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.47",
-    "@babel/core": "^7.0.0-beta.47",
-    "@babel/preset-env": "^7.0.0-beta.47",
-    "@babel/register": "^7.0.0-beta.47",
-    "ava": "^2.0.0",
-    "babel-plugin-istanbul": "^5.1.0",
-    "browser-env": "^3.2.5",
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/register": "^7.7.0",
+    "ava": "^2.4.0",
+    "babel-plugin-istanbul": "^5.2.0",
+    "brindille-component": "*",
+    "browser-env": "^3.3.0",
     "nyc": "^14.1.1",
-    "sinon": "^6.0.0",
-    "brindille-component": "*"
+    "sinon": "^6.0.0"
   }
 }
